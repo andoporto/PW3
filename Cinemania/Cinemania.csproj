@@ -145,6 +145,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdministracionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -164,6 +165,15 @@
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Shared\_LayoutPeliculas.cshtml" />
+    <Content Include="Views\Administracion\Inicio.cshtml" />
+    <Content Include="Views\Administracion\Peliculas.cshtml" />
+    <Content Include="Views\Administracion\Sedes.cshtml" />
+    <Content Include="Views\Shared\_LayoutSedes.cshtml" />
+    <Content Include="Views\Administracion\Carteleras.cshtml" />
+    <Content Include="Views\Shared\_LayoutCarteleras.cshtml" />
+    <Content Include="Views\Administracion\Reportes.cshtml" />
+    <Content Include="Views\Shared\_LayoutReportes.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -173,7 +183,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Shared\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

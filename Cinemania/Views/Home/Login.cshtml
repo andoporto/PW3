@@ -9,58 +9,64 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Inicio</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!-- nav responsive-->
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/jquery-3.1.1.min.js"></script>
 
-        <nav class="navbar navbar-inverse bg-inverse">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#">CINEMANIA</a>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">CINEMANIA</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="../">Home</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="#"><span class="glyphicon glyphicon-user"></span> Administracion</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div id="loginbox">
+
+            <form action="../Administracion/Inicio" class="form-signin" method="POST">
+                <!-- CABECERA -->
+                <h2 class="text-center">Cinemania</h2>
+
+                <!-- INPUT EMAIL -->
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <input  id="email" type="email" class="form-control input-lg" placeholder="Correo Electronico" />
                 </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="../">Home</a></li>
-                    </ul>
 
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="#">Administracion</a></li>
-                    </ul>
-                </div><!--/.nav-collapse -->
-            </div><!--/.container-fluid -->
-        </nav>
-
-        <div class="container">
-
-                <div id="loginbox">
-
-                    <form action="validar-login" class="form-signin" method="POST">
-                        <!-- CABECERA -->
-                        <h2 class="text-center">Cinemania</h2>
-
-                        <!-- INPUT EMAIL -->
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input  id="email" type="email" class="form-control input-lg" placeholder="Correo Electronico" />
-                        </div>
-
-                        <!-- INPUT CONTRASEÑA -->
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                            <input  id="password" type="password" class="form-control input-lg" placeholder="Contraseña" />
-                        </div>
-                        <br>
-
-                        <!-- BOTON INICIAR SESION -->
-                        <div class="form-group">
-                            <button class="btn btn-lg btn-primary btn-block" name="Submit" value="Login" type="Submit">Iniciar Sesion</button>
-                        </div>
-                    </form>
-
+                <!-- INPUT CONTRASEÑA -->
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input  id="password" type="password" class="form-control input-lg" placeholder="Contraseña" />
                 </div>
-          </div>    <!-- /container -->
+                <br>
+
+                <!-- BOTON INICIAR SESION -->
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block" name="Submit" value="Login" type="Submit">Iniciar Sesion</button>
+                </div>
+             </form>
+
+        </div>
+    </div>    <!-- /container -->
 
 </body>
 </html>

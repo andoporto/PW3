@@ -13,10 +13,18 @@ namespace Cinemania
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            // HOME CONTROLLER
             routes.MapRoute(
                 name: "Home",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Inicio", id = UrlParameter.Optional }
+            );
+
+            // ADMINISTRACION CONTROLLER
+            routes.MapRoute(
+                name: "Administracion",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Administracion", action = "Inicio", id = UrlParameter.Optional }
             );
         }
     }
