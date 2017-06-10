@@ -28,6 +28,8 @@ namespace Cinemania.Controllers
         // GET: Peliculas/NuevoPelicula
         public ActionResult NuevoPelicula()
         {
+            ViewBag.IdCalificacion = new SelectList(db.Calificaciones, "IdCalificacion", "Nombre");
+            ViewBag.IdGenero = new SelectList(db.Generos, "IdGenero", "Nombre");
             return View();
         }
 
@@ -39,8 +41,8 @@ namespace Cinemania.Controllers
 
             pel.Nombre = form["nombre"];
             pel.Descripcion = form["descripcion"];
-            pel.IdCalificacion = Convert.ToInt32(form["idCalificacion"]);
-            pel.IdGenero = Convert.ToInt32(form["idGenero"]);
+            pel.IdCalificacion = Convert.ToInt32(form["IdCalificacion"]);
+            pel.IdGenero = Convert.ToInt32(form["IdGenero"]);
             pel.Imagen = form["imagen"];
             pel.Duracion = Convert.ToInt16(form["duracion"]);
             pel.FechaCarga = DateTime.Now;
@@ -56,6 +58,8 @@ namespace Cinemania.Controllers
         {
             /*** SINTAXIS DE METODO ***/
             var pel = db.Peliculas.Where(p => p.IdPelicula == IdPelicula).FirstOrDefault();
+            ViewBag.IdCalificacion = new SelectList(db.Calificaciones, "IdCalificacion", "Nombre");
+            ViewBag.IdGenero = new SelectList(db.Generos, "IdGenero", "Nombre");
 
             return View(pel);
         }
@@ -68,8 +72,8 @@ namespace Cinemania.Controllers
 
             peli.Nombre = Request["nombre"];
             peli.Descripcion = Request["descripcion"];
-            peli.IdCalificacion = Convert.ToInt32(Request["idCalificacion"]);
-            peli.IdGenero = Convert.ToInt32(Request["idGenero"]);
+            peli.IdCalificacion = Convert.ToInt32(Request["IdCalificacion"]);
+            peli.IdGenero = Convert.ToInt32(Request["IdGenero"]);
             peli.Imagen = Request["imagen"];
             peli.Duracion = Convert.ToInt32(Request["duracion"]);
             pel.FechaCarga = DateTime.Now;

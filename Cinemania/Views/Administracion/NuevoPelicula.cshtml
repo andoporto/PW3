@@ -63,15 +63,13 @@
                 <!-- INPUT CALIFICACION -->
                 <div class="form-group">
                     <label for="idcalificacion">Calificacion</label>
-                    @Html.TextBoxFor(m => m.IdCalificacion, new { placeholder = "Ingresar Calificacion", @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.Calificaciones)
+                    @Html.DropDownList("IdCalificacion", null, "Seleccionar", new { @class = "form-control" })
                 </div>
 
                 <!-- INPUT GENERO -->
                 <div class="form-group">
                     <label for="idgenero">Genero</label>
-                    @Html.TextBoxFor(m => m.IdGenero, new { placeholder = "Ingresar Genero", @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.Generos)
+                    @Html.DropDownList("IdGenero", null, "Seleccionar", new { @class = "form-control" })
                 </div>
 
 
