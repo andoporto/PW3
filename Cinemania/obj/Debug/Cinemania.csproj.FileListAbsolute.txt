@@ -86,3 +86,7 @@ C:\Users\Julian\documents\visual studio 2015\Projects\Cinemania\Cinemania\bin\ro
 C:\Users\Julian\documents\visual studio 2015\Projects\Cinemania\Cinemania\bin\roslyn\System.Xml.XPath.XDocument.dll
 C:\Users\Julian\documents\visual studio 2015\Projects\Cinemania\Cinemania\bin\roslyn\vbc.exe.config
 C:\Users\Julian\documents\visual studio 2015\Projects\Cinemania\Cinemania\bin\roslyn\vbc.rsp
+C:\Users\Julian\Documents\Visual Studio 2015\Projects\Cinemania\Cinemania\bin\EntityFramework.dll
+C:\Users\Julian\Documents\Visual Studio 2015\Projects\Cinemania\Cinemania\bin\EntityFramework.SqlServer.dll
+C:\Users\Julian\Documents\Visual Studio 2015\Projects\Cinemania\Cinemania\bin\EntityFramework.xml
+C:\Users\Julian\Documents\Visual Studio 2015\Projects\Cinemania\Cinemania\bin\EntityFramework.SqlServer.xml
