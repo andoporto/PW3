@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Cinemania.Models;
 
 namespace Cinemania.Controllers
 {
@@ -30,12 +31,13 @@ namespace Cinemania.Controllers
         [HttpPost]
         public ActionResult ValidarLogin(FormCollection form)
         {
-            /*** SINTAXIS DE CONSULTA ***/
-            var emp = (from u in db.Usuarios
-                       where u.NombreUsuario == form["nomUsuario"] && u.NombreUsuario == form["passUsuario"]
-                       select u);
+            var resultado = ValidarUsuario.Validar(form);
 
-            /** FALTA IMPLEMENTAR VALIDACION **/
+            if (resultado == null)
+            {
+                TempData["Validacion"] = "Datos inválidos";
+                return RedirectToAction("../Home/Login");
+            }
 
             return RedirectToAction("../Administracion/Inicio");          
         }
