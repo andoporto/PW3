@@ -9,26 +9,8 @@ using Cinemania.Models;
 namespace Cinemania.Models
 {
     [MetadataType(typeof(PeliculaMetadata))]
-    public class Pelicula
+    public partial class Pelicula
     {
        
-    }
-
-    public enum clasificacion
-    {
-        ATP,
-        May13,
-        May13R,
-        May16,
-        May16R
-    }
-
-    public enum genero
-    {
-        Terror,
-        Thriller,
-        Accion,
-        Comedia,
-        ComediaR
-    }
+    }    
 }

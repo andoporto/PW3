@@ -7,9 +7,9 @@ using Cinemania.Models;
 
 namespace Cinemania.Models
 {
-    [MetadataType(typeof(SedeMetadata))]
-    public partial class Sede
+    [MetadataType(typeof(UsuarioMetadata))]
+    public partial class Usuario
     {
-
+        
     }
 }

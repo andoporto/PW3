@@ -7,9 +7,8 @@ using Cinemania.Models;
 
 namespace Cinemania.Models
 {
-    [MetadataType(typeof(PersonaMetadata))]
-    public class Persona
+    [MetadataType(typeof(CarteleraMetaData))]
+    public partial class Cartelera
     {
-        
     }
 }
