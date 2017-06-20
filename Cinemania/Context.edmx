@@ -479,7 +479,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Context" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Calificaciones" EntityType="Self.Calificaciones" />
           <EntitySet Name="Carteleras" EntityType="Self.Carteleras" />
           <EntitySet Name="Generos" EntityType="Self.Generos" />
@@ -531,7 +531,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="C_TPModelStoreContainer" CdmEntityContainer="Context">
+        <EntityContainerMapping StorageEntityContainer="C_TPModelStoreContainer" CdmEntityContainer="Entities">
           <EntitySetMapping Name="Calificaciones">
             <EntityTypeMapping TypeName="C_TPModel.Calificaciones">
               <MappingFragment StoreEntitySet="Calificaciones">

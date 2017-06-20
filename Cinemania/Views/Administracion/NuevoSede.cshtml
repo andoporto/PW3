@@ -43,27 +43,27 @@
             <div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 
                 <!-- CABECERA -->
-                <h2 class="text-center">Nuevo</h2>
+                <h2 class="text-center">Nueva Pelicula</h2>
 
                 <!-- INPUT NOMBRE -->
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
                     @Html.TextBoxFor(m => m.Nombre, new { placeholder = "Ingresar Nombre", @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.Nombre)
+                    @Html.ValidationMessageFor(m => m.Nombre, "", new { @class = "text-danger" })
                 </div>
 
                 <!-- INPUT DIRECCION -->
                 <div class="form-group">
                     <label for="direcion">Direccion</label>
                     @Html.TextBoxFor(m => m.Direccion, new { placeholder = "Ingresar Direccion", @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.Direccion)
+                    @Html.ValidationMessageFor(m => m.Direccion, "", new { @class = "text-danger" })
                 </div>
 
                 <!-- INPUT PRECIO ENTRADA -->
                 <div class="form-group">
                     <label for="precio">Precio Entrada</label>
                     @Html.TextBoxFor(m => m.PrecioGeneral, new { placeholder = "Ingresar Precio Entrada", @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.PrecioGeneral)
+                    @Html.ValidationMessageFor(m => m.PrecioGeneral, "", new { @class = "text-danger" })
                 </div>
 
                 <!-- BOTON GUARDAR -->
@@ -79,6 +79,7 @@
     </div>
 
     <script src="~/Scripts/jquery-3.1.1.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 </body>
 </html>

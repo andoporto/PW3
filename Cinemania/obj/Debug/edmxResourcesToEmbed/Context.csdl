@@ -220,7 +220,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="Context" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Calificaciones" EntityType="Self.Calificaciones" />
     <EntitySet Name="Carteleras" EntityType="Self.Carteleras" />
     <EntitySet Name="Generos" EntityType="Self.Generos" />

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="C_TPModelStoreContainer" CdmEntityContainer="Context">
+  <EntityContainerMapping StorageEntityContainer="C_TPModelStoreContainer" CdmEntityContainer="Entities">
     <EntitySetMapping Name="Calificaciones">
       <EntityTypeMapping TypeName="C_TPModel.Calificaciones">
         <MappingFragment StoreEntitySet="Calificaciones">

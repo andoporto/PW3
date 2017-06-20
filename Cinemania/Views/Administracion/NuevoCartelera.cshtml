@@ -1,4 +1,4 @@
-﻿@model Cinemania.Peliculas
+﻿@model Cinemania.Models.Cartelera
 
 @{
     Layout = null;
@@ -47,44 +47,45 @@
             <div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 
                 <!-- CABECERA -->
-                <h2 class="text-center">Nuevo</h2>
+                <h2 class="text-center">Nueva cartelera</h2>
 
                 <!-- INPUT NOMBRE -->
                 <div class="form-group">
-                    <label for="Nombre">Nombre</label>
-                    @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
-                 
+                    <label for="Sede">Sede</label>
+                    @Html.EditorFor(model => model.cod, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.cod, "", new { @class = "text-danger" })
+
                 </div>
 
                 <!-- INPUT DESCRIPCION -->
                 <div class="form-group">
                     <label for="descripcion">Descripcion</label>
                     @*Html.TextBoxFor(model => model.Descripcion, new { placeholder = "Ingresar Descripcion", @class = "form-control" })*@
-           
 
-                    @Html.EditorFor(model => model.descripcion, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.descripcion, "", new { @class = "text-danger" })
+
+                    @Html.EditorFor(model => model.duracion, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.duracion, "", new { @class = "text-danger" })
                 </div>
 
                 <!-- INPUT CALIFICACION -->
                 <div class="form-group">
 
-                   <label for="IdCalificacion">Calificacion</label>
+                    <label for="hora">Hora inicio</label>
                     <select>
-                        <option value="ATP">ATP</option>
+                        <option value="10:00">10:00</option>
 
-                        <option value="May13">May13</option>
-                        <option value="May13R">May13R</option>
+                        <option value="12:00">12:00</option>
+                        <option value="14:00">14:00</option>
 
-                        <option value="May16">May16</option>
-                        <option value="May16R">May16R</option> 
+                        <option value="16:00">16:00</option>
+                        <option value="19:00">19:00</option>
 
                     </select>
                     @*Html.DropDownList("IdCalificacion", (IEnumerable<SelectListItem>)ViewBag["IdCalificacion"], "Selecione genero", new { @class = "form-control" }) *@
-                    @*Html.DropDownList("id_cate", String.Empty);*@
-                    @*Html.DropDownList("Peliculas", new SelectList(ViewBag.listaCursos, "IdGenero", "Nombre"))*@
-                    @Html.DropDownList("IdCalificacion", (IEnumerable<SelectListItem>)ViewBag["IdCalificacion"], "Selecione genero", new { @class = "form-control" })
+
+                    @*Html.DropDownList("Curso", new SelectList(ViewBag.IdGenero, "ID", "Nombre"))*@
+
+
 
                 </div>
 
@@ -100,45 +101,62 @@
                     </select>
 
                     @*Html.DropDownList("IdGenero", (IEnumerable<SelectListItem>)ViewBag["IdGenero"], "Selecione calificacion", new { @class = "form-control" })*@
-                     @Html.DropDownList("IdCalificacion", (IEnumerable<SelectListItem>)ViewBag["IdCalificacion"], "Selecione genero", new { @class = "form-control" }) 
-                    </div>
+
+                    @Html.ValidationMessageFor(model => model.IdGenero, "", new { @class = "text-danger" })
+                </div>
 
 
 
 
 
-                    <!-- INPUT IMAGEN -->
-                    <div class="form-group">
-                        <label for="Imagen">Imagen</label>
-                        @Html.TextBoxFor(model => model.Imagen, new { Type = "file" })
-                        @Html.ValidationMessageFor(model => model.Imagen, "", new { @class = "text-danger" })
-                    </div>
+                <!-- INPUT IMAGEN -->
+                <div class="form-group">
+                    <label for="Imagen">Imagen</label>
+                    @Html.TextBoxFor(model => model.Imagen, new { Type = "file" })
+                    @Html.ValidationMessageFor(model => model.Imagen, "", new { @class = "text-danger" })
+                </div>
 
 
-                    <!-- INPUT DURACION -->
-                    <div class="form-group">
-                        <label for="Duracion">Duracion</label>
-                        @Html.EditorFor(model => model.Duracion, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Duracion, "", new { @class = "text-danger" })
-                    </div>
+                <!-- INPUT DURACION -->
+                <div class="form-group">
+                    <label for="Duracion">Duracion</label>
+                    @Html.EditorFor(model => model.Duracion, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Duracion, "", new { @class = "text-danger" })
+                </div>
 
-                    <!-- BOTON GUARDAR -->
-                    <div class="text-center">
-                        <input type="submit" class="btn btn-success" value="Guardar" />
+                <!-- BOTON GUARDAR -->
+                <div class="text-center">
+                    <input type="submit" class="btn btn-success" value="Guardar" />
 
-                        <!-- LINK SALIR -->
-                        <a href="./Peliculas" class="btn btn-default">Cancelar</a>
-                    </div>
-
-
-
-                </div>}
-        </div>
+                    <!-- LINK SALIR -->
+                    <a href="./Peliculas" class="btn btn-default">Cancelar</a>
+                </div>
 
 
-        <script src="~/Scripts/jquery-3.1.1.min.js"></script>
-        <script src="~/Scripts/jquery.validate.min.js"></script>
-        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 
-    </body>
-    </html>
+            </div>}
+    </div>
+
+
+    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+</body>
+</html>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>NuevoCartelera</title>
+</head>
+<body>
+    <div> 
+    </div>
+</body>
+</html>

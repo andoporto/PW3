@@ -161,9 +161,11 @@
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="imagenes\matrix.jpg" />
     <Content Include="imagenes\rambo.jpg" />
+    <Content Include="imagenes\rapidos y furiosos 8.jpg" />
     <Content Include="imagenes\terminator.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
@@ -171,6 +173,8 @@
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -204,6 +208,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Cartelera.cs" />
+    <Compile Include="Models\CarteleraMetaData.cs" />
+    <Compile Include="Models\ListarCalificacion.cs" />
+    <Compile Include="Models\SedeMetadata.cs" />
+    <Compile Include="Models\Pelicula.cs" />
+    <Compile Include="Models\PeliculaMetadata.cs" />
+    <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Models\UsuarioMetadata.cs" />
+    <Compile Include="Models\Sede.cs" />
+    <Compile Include="Models\ValidarUsuario.cs" />
     <Compile Include="Peliculas.cs">
       <DependentUpon>Context.tt</DependentUpon>
     </Compile>
@@ -248,6 +262,8 @@
     <Content Include="Views\Administracion\NuevoSede.cshtml" />
     <Content Include="Views\Shared\_LayoutInicio.cshtml" />
     <Content Include="Views\Administracion\EditarSede.cshtml" />
+    <Content Include="Views\Administracion\NuevoCartelera.cshtml" />
+    <Content Include="Views\Administracion\NuevoPelicula22.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -257,7 +273,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

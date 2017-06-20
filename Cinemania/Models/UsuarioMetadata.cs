@@ -6,16 +6,13 @@ using System.Web;
 
 namespace Cinemania.Models
 {
-    public class SedeMetadata
+    public class UsuarioMetadata
     {
-        [Required]
-        [Key]
+        [Required]       
         public int cod { get; set; }
-        [Required]   
+        [Required]    
         public string nombre { get; set; }
-        [Required]   
-        public string direccion { get; set; }
-        [Required]
-        public double precioEntrada { get; set; }
+        [Required]         
+        public string claveLogin { get; set; }
     }
 }

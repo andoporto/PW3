@@ -17,7 +17,7 @@ namespace Cinemania.Controllers
         public ActionResult Inicio()
         {
 
-            var listaPeliculas = db.Peliculas.ToList();
+            var listaPeliculas = db.Pelicula.ToList();
 
             return View(listaPeliculas);
         }
