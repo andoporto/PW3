@@ -52,8 +52,8 @@
                 <!-- INPUT NOMBRE -->
                 <div class="form-group">
                     <label for="Nombre">Nombre</label>
-                    @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
                  
                 </div>
 
@@ -63,8 +63,8 @@
                     @*Html.TextBoxFor(model => model.Descripcion, new { placeholder = "Ingresar Descripcion", @class = "form-control" })*@
            
 
-                    @Html.EditorFor(model => model.descripcion, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.descripcion, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.Descripcion, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Descripcion, "", new { @class = "text-danger" })
                 </div>
 
                 <!-- INPUT CALIFICACION -->
@@ -83,8 +83,8 @@
                     </select>
                     @*Html.DropDownList("IdCalificacion", (IEnumerable<SelectListItem>)ViewBag["IdCalificacion"], "Selecione genero", new { @class = "form-control" }) *@
                     @*Html.DropDownList("id_cate", String.Empty);*@
-                    @*Html.DropDownList("Peliculas", new SelectList(ViewBag.listaCursos, "IdGenero", "Nombre"))*@
-                    @Html.DropDownList("IdCalificacion", (IEnumerable<SelectListItem>)ViewBag["IdCalificacion"], "Selecione genero", new { @class = "form-control" })
+                    @Html.DropDownList("Peliculas", new SelectList(ViewBag.listaCursos, "IdGenero", "Nombre"))
+                    @*Html.DropDownList("IdCalificacion", (IEnumerable<SelectListItem>)ViewBag["IdCalificacion"], "Selecione genero", new { @class = "form-control" })*@
 
                 </div>
 

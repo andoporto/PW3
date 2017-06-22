@@ -1,4 +1,4 @@
-﻿@model Cinemania.Models.Cartelera
+﻿@model Cinemania.Carteleras
 
 @{
     Layout = null;
@@ -52,25 +52,25 @@
                 <!-- INPUT NOMBRE -->
                 <div class="form-group">
                     <label for="Sede">Sede</label>
-                    @Html.EditorFor(model => model.cod, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.cod, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.IdSede, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.IdSede, "", new { @class = "text-danger" })
 
                 </div>
 
                 <!-- INPUT DESCRIPCION -->
                 <div class="form-group">
-                    <label for="descripcion">Descripcion</label>
+                    <label for="Sede">Pelicula</label>
                     @*Html.TextBoxFor(model => model.Descripcion, new { placeholder = "Ingresar Descripcion", @class = "form-control" })*@
 
 
-                    @Html.EditorFor(model => model.duracion, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.duracion, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.IdPelicula, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.IdPelicula, "", new { @class = "text-danger" })
                 </div>
 
                 <!-- INPUT CALIFICACION -->
                 <div class="form-group">
 
-                    <label for="hora">Hora inicio</label>
+                    <label for="horai">Hora inicio</label>
                     <select>
                         <option value="10:00">10:00</option>
 
@@ -84,44 +84,44 @@
                     @*Html.DropDownList("IdCalificacion", (IEnumerable<SelectListItem>)ViewBag["IdCalificacion"], "Selecione genero", new { @class = "form-control" }) *@
 
                     @*Html.DropDownList("Curso", new SelectList(ViewBag.IdGenero, "ID", "Nombre"))*@
-
+                    @Html.DropDownList("Inicio", new SelectList(ViewBag.HoraInicio, "ID", "Nombre"))
 
 
                 </div>
-
-                <!-- INPUT GENERO -->
                 <div class="form-group">
-                    <label for="IdGenero">Genero</label>
+
+                    <label for="horaf">Hora fin</label>
                     <select>
-                        <option value="Terror">Terror</option>
-                        <option value="Thriller">Thriller</option>
-                        <option value="Accion">Accion</option>
-                        <option value="Comedia">Comedia</option>
-                        <option value="ComediaR">ComediaR</option>
+                        <option value="10:00">10:00</option>
+
+                        <option value="12:00">12:00</option>
+                        <option value="14:00">14:00</option>
+
+                        <option value="16:00">16:00</option>
+                        <option value="19:00">19:00</option>
+
                     </select>
+                    @*Html.DropDownList("IdCalificacion", (IEnumerable<SelectListItem>)ViewBag["IdCalificacion"], "Selecione genero", new { @class = "form-control" }) *@
 
-                    @*Html.DropDownList("IdGenero", (IEnumerable<SelectListItem>)ViewBag["IdGenero"], "Selecione calificacion", new { @class = "form-control" })*@
+                    @*Html.DropDownList("Curso", new SelectList(ViewBag.IdGenero, "ID", "Nombre"))*@
+                    @Html.DropDownList("Inicio", new SelectList(ViewBag.HoraInicio, "ID", "Nombre"))
 
-                    @Html.ValidationMessageFor(model => model.IdGenero, "", new { @class = "text-danger" })
+
                 </div>
 
 
 
 
 
-                <!-- INPUT IMAGEN -->
-                <div class="form-group">
-                    <label for="Imagen">Imagen</label>
-                    @Html.TextBoxFor(model => model.Imagen, new { Type = "file" })
-                    @Html.ValidationMessageFor(model => model.Imagen, "", new { @class = "text-danger" })
-                </div>
+
+
 
 
                 <!-- INPUT DURACION -->
                 <div class="form-group">
-                    <label for="Duracion">Duracion</label>
-                    @Html.EditorFor(model => model.Duracion, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Duracion, "", new { @class = "text-danger" })
+                    <label for="sala">numero de sala</label>
+                    @Html.EditorFor(model => model.NumeroSala, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.NumeroSala, "", new { @class = "text-danger" })
                 </div>
 
                 <!-- BOTON GUARDAR -->
@@ -129,12 +129,13 @@
                     <input type="submit" class="btn btn-success" value="Guardar" />
 
                     <!-- LINK SALIR -->
-                    <a href="./Peliculas" class="btn btn-default">Cancelar</a>
+                    <!--<a href="./Peliculas" class="btn btn-default">Cancelar</a>-->
                 </div>
 
-
-
-            </div>}
+            </div>
+ }
+     </div>
+       
     </div>
 
 
@@ -144,6 +145,7 @@
 
 </body>
 </html>
+
 @{
     Layout = null;
 }
