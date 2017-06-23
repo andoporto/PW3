@@ -83,7 +83,7 @@
                     </select>
                     @*Html.DropDownList("IdCalificacion", (IEnumerable<SelectListItem>)ViewBag["IdCalificacion"], "Selecione genero", new { @class = "form-control" }) *@
                     @*Html.DropDownList("id_cate", String.Empty);*@
-                    @Html.DropDownList("Peliculas", new SelectList(ViewBag.listaCursos, "IdGenero", "Nombre"))
+                    @Html.DropDownList("IdGenero", null, "Selecione genero", new { @class = "form-control" })
                     @*Html.DropDownList("IdCalificacion", (IEnumerable<SelectListItem>)ViewBag["IdCalificacion"], "Selecione genero", new { @class = "form-control" })*@
 
                 </div>
@@ -100,7 +100,9 @@
                     </select>
 
                     @*Html.DropDownList("IdGenero", (IEnumerable<SelectListItem>)ViewBag["IdGenero"], "Selecione calificacion", new { @class = "form-control" })*@
-                     @Html.DropDownList("IdCalificacion", (IEnumerable<SelectListItem>)ViewBag["IdCalificacion"], "Selecione genero", new { @class = "form-control" }) 
+                     @*Html.DropDownList("IdCalificacion", (IEnumerable<SelectListItem>)ViewBag["IdCalificacion"], "Selecione genero", new { @class = "form-control" })*@ 
+                    @Html.DropDownList("IdCalificacion",null, "Selecione genero", new { @class = "form-control" })
+                    
                     </div>
 
 

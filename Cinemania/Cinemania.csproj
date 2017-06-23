@@ -263,7 +263,6 @@
     <Content Include="Views\Shared\_LayoutInicio.cshtml" />
     <Content Include="Views\Administracion\EditarSede.cshtml" />
     <Content Include="Views\Administracion\NuevoCartelera.cshtml" />
-    <Content Include="Views\Administracion\NuevoPelicula22.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

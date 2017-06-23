@@ -12,7 +12,7 @@ namespace Cinemania.Controllers
         // BASE DE DATOS
         Context db = new Context();
 
-        public object lPeli { get; private set; }
+        
 
         // GET: Administracion/Inicio
         public ActionResult Inicio()
@@ -20,127 +20,53 @@ namespace Cinemania.Controllers
             return View();
         }
 
-        // GET: Administracion/Peliculas
-        /*   public ActionResult Peliculas()
-           {
-               var listaPeliculas = db.Pelicula.ToList();
-
-               return View(listaPeliculas);
-           }
-           */
-
+       
         public ActionResult Peliculas()
         {
-            //  var listaPeliculas = db.Pelicula.ToList();
+            var listaPeliculas = db.Pelicula.ToList();
             ViewBag.listaCalificaciones = new SelectList(db.Calificaciones, "IdCalificaciones", "Nombre");
 
             return View();
         }
 
+        public ActionResult NuevoPelicula()
+        {
+            ViewBag.IdCalificacion = new SelectList(db.Calificaciones, "IdCalificacion", "Nombre");
+            ViewBag.IdGenero = new SelectList(db.Generos, "IdGenero", "Nombre");
 
+            ViewBag.listaPeliculas = new SelectList(db.Generos, "IdPelicula", "Nombre");
+
+            return View();
+        }
 
 
         // GET: Peliculas/NuevoPelicula
 
-        public ActionResult NuevoPelicula()
-        {
-            // ViewBag.IdCalificacion = new SelectList(db.Calificaciones, "IdCalificacion", "Nombre");
-            // ViewBag.IdGenero = new SelectList(db.Generos, "IdGenero", "Nombre");
-
-            // ViewBag.id_cate = SelectList(db.Generos, "IdGenero", "Nombre");
-            return View();
-
-            //var peli = new Pelicula();
-
-            /* ListarCalificacion LC = new ListarCalificacion();
-               LC.DatosSucursal = new SelectList(Listar.GetCalificaciones(), "IdCalificacion", "Nombre");
-               return View(LC);*/
-
-/*
-            List<Pelicula> lPeli = new List<Pelicula>();
-            lPeli = db.Pelicula.ToList();
-            ViewBag.listaPeliculas = lPeli;
-            ViewBag.lPeli = new SelectList(db.Pelicula, "id_pelicula", "pelicula_name");
-*/
-            
-            
-            
-            // return View(lPeli); 
-            List<Pelicula> lPeli = new List<Pelicula>();
-            lPeli = db.Peliculas.ToList();
-            ViewBag.listaPeliculas = lPeli;
-
-            return View(lPeli);
-
-        } 
-       /*
-        public ActionResult NuevoPelicula()
-        {
-            List<SelectListItem> lPeli_listitem = new List<SelectListItem>();
-            List<Pelicula> lPeli = new List<Pelicula>();
-             lPeli = db.Peliculas.ToList();
-
-            foreach (var de in lPeli)
-            {
-                Peliculas iDep = new Peliculas();
-                iDep.IdPelicula = de.GetHashCode;
-                iDep.IdCalificacion = de.Calificacion;
-                SelectListItem item = new SelectListItem() { Value = iDep.IdPelicula.ToString(), Text = iDep.IdCalificacion};
-                lPeli_listitem.Add(item);
-            }
-
-            ViewBag.listaPeliculas = new SelectList(lPeli_listitem, "Value", "Text");
-
-            return View("NuevoPelicula");
-
-            }
-
-            */
-
-
         [HttpPost]
-        public ActionResult NuevoPelicula(FormCollection form)
+        public ActionResult NuevoPelicula(Peliculas Pelicula)
         {
-            //Context ctx = new Context();
             Peliculas pel = new Peliculas();
-
-            pel.Nombre = form["nombre"];
-            pel.Descripcion = form["descripcion"];
-            pel.IdCalificacion = Convert.ToInt32(form["IdCalificacion"]);
-            pel.IdGenero = Convert.ToInt32(form["IdGenero"]);
-            pel.Imagen = form["imagen"];
-            pel.Duracion = Convert.ToInt16(form["duracion"]);
+            pel.Nombre = Pelicula.Nombre;
+            pel.Descripcion = Pelicula.Descripcion;
+            pel.Imagen = Pelicula.Imagen;
+            pel.IdCalificacion = Pelicula.IdCalificacion;
+            pel.IdGenero = Pelicula.IdGenero;
+            pel.Duracion = Pelicula.Duracion;
             pel.FechaCarga = DateTime.Now;
-
-            db.Pelicula.Add(pel);
-            db.SaveChanges();
-
-           // return RedirectToAction("Peliculas"); // Retorna a la vista "Peliculas"
-
-
-            //int sucursalId = model.SucursalId;
-            return View();
-        }
-        
-        [HttpPost]
-        public ActionResult NuevoPelicula(Pelicula Pelicula)
-        {
-
-
 
             if (ModelState.IsValid)
             {
 
-                Peliculas pel = new Peliculas();
-                //db.Peliculas.Add(Pelicula);
+
+
+                db.Pelicula.Add(pel);
                 db.SaveChanges();
 
                 return RedirectToAction("Peliculas"); // Retorna a la vista "Peliculas"
             }
             return View();
         }
-
-
+       
 
         //GET: Peliculas/EditarPelicula
         public ActionResult EditarPelicula(int IdPelicula)
