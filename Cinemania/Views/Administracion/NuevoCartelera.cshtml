@@ -83,32 +83,41 @@
                     </select>
                     @*Html.DropDownList("IdCalificacion", (IEnumerable<SelectListItem>)ViewBag["IdCalificacion"], "Selecione genero", new { @class = "form-control" }) *@
 
-                    @*Html.DropDownList("Curso", new SelectList(ViewBag.IdGenero, "ID", "Nombre"))*@
-                    @Html.DropDownList("Inicio", new SelectList(ViewBag.HoraInicio, "ID", "Nombre"))
+                    @*Html.DropDownList("Curso", new SelectList(ViewBag.IdGenero, "ID", "Nombre"))*@               
+                    @Html.DropDownList("Inicio", null, "Selecione HoraInicio", new { @class = "form-control" })
 
 
                 </div>
+
+
+
                 <div class="form-group">
-
-                    <label for="horaf">Hora fin</label>
-                    <select>
-                        <option value="10:00">10:00</option>
-
-                        <option value="12:00">12:00</option>
-                        <option value="14:00">14:00</option>
-
-                        <option value="16:00">16:00</option>
-                        <option value="19:00">19:00</option>
-
-                    </select>
-                    @*Html.DropDownList("IdCalificacion", (IEnumerable<SelectListItem>)ViewBag["IdCalificacion"], "Selecione genero", new { @class = "form-control" }) *@
-
-                    @*Html.DropDownList("Curso", new SelectList(ViewBag.IdGenero, "ID", "Nombre"))*@
-                    @Html.DropDownList("Inicio", new SelectList(ViewBag.HoraInicio, "ID", "Nombre"))
-
-
+                    <label for="lunes">lunes</label>
+                    <p>@Html.CheckBox("lunes", true)</p>
+                    <label for="martes">martes</label>
+                    <p>@Html.CheckBox("martes", true)</p>
                 </div>
 
+                    <div class="form-group">
+
+                        <label for="horaf">Hora fin</label>
+                        <select>
+                            <option value="10:00">10:00</option>
+
+                            <option value="12:00">12:00</option>
+                            <option value="14:00">14:00</option>
+
+                            <option value="16:00">16:00</option>
+                            <option value="19:00">19:00</option>
+
+                        </select>
+                        @*Html.DropDownList("IdCalificacion", (IEnumerable<SelectListItem>)ViewBag["IdCalificacion"], "Selecione genero", new { @class = "form-control" }) *@
+
+                        @*Html.DropDownList("Curso", new SelectList(ViewBag.IdGenero, "ID", "Nombre"))*@
+                        @Html.DropDownList("Inicio", new SelectList(ViewBag.HoraFin, "ID", "Nombre"))
+
+
+                    </div>
 
 
 
@@ -117,22 +126,23 @@
 
 
 
-                <!-- INPUT DURACION -->
-                <div class="form-group">
-                    <label for="sala">numero de sala</label>
-                    @Html.EditorFor(model => model.NumeroSala, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.NumeroSala, "", new { @class = "text-danger" })
+
+                    <!-- INPUT DURACION -->
+                    <div class="form-group">
+                        <label for="sala">numero de sala</label>
+                        @Html.EditorFor(model => model.NumeroSala, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.NumeroSala, "", new { @class = "text-danger" })
+                    </div>
+
+                    <!-- BOTON GUARDAR -->
+                    <div class="text-center">
+                        <input type="submit" class="btn btn-success" value="Guardar" />
+
+                        <!-- LINK SALIR -->
+                        <!--<a href="./Peliculas" class="btn btn-default">Cancelar</a>-->
+                    </div>
+
                 </div>
-
-                <!-- BOTON GUARDAR -->
-                <div class="text-center">
-                    <input type="submit" class="btn btn-success" value="Guardar" />
-
-                    <!-- LINK SALIR -->
-                    <!--<a href="./Peliculas" class="btn btn-default">Cancelar</a>-->
-                </div>
-
-            </div>
  }
      </div>
        

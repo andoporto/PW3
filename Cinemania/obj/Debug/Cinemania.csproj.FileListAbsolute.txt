@@ -182,7 +182,6 @@ C:\Users\Julian\PW3\Cinemania\bin\es\System.Web.Mvc.resources.dll
 C:\Users\Julian\PW3\Cinemania\obj\Debug\Cinemania.csprojResolveAssemblyReference.cache
 C:\Users\Julian\PW3\Cinemania\obj\Debug\Cinemania.dll
 C:\Users\Julian\PW3\Cinemania\obj\Debug\Cinemania.pdb
-C:\Prog web 3 2017\PW3\Cinemania\obj\Debug\Cinemania.csprojResolveAssemblyReference.cache
 C:\Prog web 3 2017\PW3\Cinemania\bin\ApplicationInsights.config
 C:\Prog web 3 2017\PW3\Cinemania\bin\roslyn\csc.exe
 C:\Prog web 3 2017\PW3\Cinemania\bin\roslyn\csc.exe.config
@@ -272,5 +271,6 @@ C:\Prog web 3 2017\PW3\Cinemania\bin\es\System.Web.Webpages.Deployment.resources
 C:\Prog web 3 2017\PW3\Cinemania\bin\es\System.Web.Webpages.Razor.resources.dll
 C:\Prog web 3 2017\PW3\Cinemania\bin\es\System.Web.Helpers.resources.dll
 C:\Prog web 3 2017\PW3\Cinemania\bin\es\System.Web.Mvc.resources.dll
+C:\Prog web 3 2017\PW3\Cinemania\obj\Debug\Cinemania.csprojResolveAssemblyReference.cache
 C:\Prog web 3 2017\PW3\Cinemania\obj\Debug\Cinemania.dll
 C:\Prog web 3 2017\PW3\Cinemania\obj\Debug\Cinemania.pdb
