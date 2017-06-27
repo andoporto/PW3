@@ -70,37 +70,15 @@
                 <!-- INPUT CALIFICACION -->
                 <div class="form-group">
 
-                   <label for="IdCalificacion">Calificacion</label>
-                    <select>
-                        <option value="ATP">ATP</option>
-
-                        <option value="May13">May13</option>
-                        <option value="May13R">May13R</option>
-
-                        <option value="May16">May16</option>
-                        <option value="May16R">May16R</option> 
-
-                    </select>
-                    @*Html.DropDownList("IdCalificacion", (IEnumerable<SelectListItem>)ViewBag["IdCalificacion"], "Selecione genero", new { @class = "form-control" }) *@
-                    @*Html.DropDownList("id_cate", String.Empty);*@
-                    @Html.DropDownList("Peliculas", new SelectList(ViewBag.listaCursos, "IdGenero", "Nombre"))
-                    @*Html.DropDownList("IdCalificacion", (IEnumerable<SelectListItem>)ViewBag["IdCalificacion"], "Selecione genero", new { @class = "form-control" })*@
+                    @Html.DropDownList("IdCalificacion", null, "Selecione Clasificación", new { @class = "form-control" })
 
                 </div>
 
                 <!-- INPUT GENERO -->
-                <div class="form-group">
-                    <label for="IdGenero">Genero</label>
-                    <select>
-                        <option value="Terror">Terror</option>
-                        <option value="Thriller">Thriller</option>
-                        <option value="Accion">Accion</option>
-                        <option value="Comedia">Comedia</option>
-                        <option value="ComediaR">ComediaR</option>
-                    </select>
+                <div class="form-group">                
 
-                    @*Html.DropDownList("IdGenero", (IEnumerable<SelectListItem>)ViewBag["IdGenero"], "Selecione calificacion", new { @class = "form-control" })*@
-                     @Html.DropDownList("IdCalificacion", (IEnumerable<SelectListItem>)ViewBag["IdCalificacion"], "Selecione genero", new { @class = "form-control" }) 
+
+                     @Html.DropDownList("IdGenero", null, "Selecione genero", new { @class = "form-control" }) 
                     </div>
 
 

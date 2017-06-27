@@ -1,45 +1,45 @@
 ﻿@model Cinemania.Carteleras
 
 @{
-    Layout = null;
+    @*Layout = "~/Views/Shared/_LayoutCarteleras.cshtml";*@
 }
 
-<!DOCTYPE html>
+    <!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>NuevoPelicula</title>
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-</head>
-<body>
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Nueva cartelera</title>
+        <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    </head>
+    <body>
 
-    <!-- Menu -->
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">CINEMANIA</a>
+        <!-- Menu -->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">CINEMANIA</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">Home</a></li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="#"><span class="glyphicon glyphicon-user"></span> Administracion</a></li>
+                        <li><a href="../"><span class="glyphicon glyphicon-log-in"></span> Cerrar Sesion</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav">
-                    <li><a href="#">Home</a></li>
-                </ul>
+        </nav>
 
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="#"><span class="glyphicon glyphicon-user"></span> Administracion</a></li>
-                    <li><a href="../"><span class="glyphicon glyphicon-log-in"></span> Cerrar Sesion</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <div class="container">
-        @*using (Html.BeginForm("/NuevoPelicula", "Administracion", new { enctype = "multipart/form-data", @class = "text-danger" }))*@
+        <div class="container">
+            @*using (Html.BeginForm("/NuevoPelicula", "Administracion", new { enctype = "multipart/form-data", @class = "text-danger" }))*@
 
         @using (Html.BeginForm())
         {
@@ -52,7 +52,7 @@
                 <!-- INPUT NOMBRE -->
                 <div class="form-group">
                     <label for="Sede">Sede</label>
-                    @Html.EditorFor(model => model.IdSede, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.DropDownList("IdSede", null, "Selecione Sede", new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.IdSede, "", new { @class = "text-danger" })
 
                 </div>
@@ -60,14 +60,21 @@
                 <!-- INPUT DESCRIPCION -->
                 <div class="form-group">
                     <label for="Sede">Pelicula</label>
-                    @*Html.TextBoxFor(model => model.Descripcion, new { placeholder = "Ingresar Descripcion", @class = "form-control" })*@
 
-
-                    @Html.EditorFor(model => model.IdPelicula, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.DropDownList("IdPelicula", null, "Selecione Pelicula", new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.IdPelicula, "", new { @class = "text-danger" })
                 </div>
 
                 <!-- INPUT CALIFICACION -->
+<<<<<<< HEAD
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.HoraInicio, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.HoraInicio, new { @class = "form-control horario time ui-timepicker-input" })
+                        @Html.ValidationMessageFor(model => model.HoraInicio, "", new { @class = "text-danger" })
+                    </div>
+=======
                 <div class="form-group">
 
                     <label for="horai">Hora inicio</label>
@@ -81,49 +88,80 @@
                         <option value="19:00">19:00</option>
 
                     </select>
-                    @*Html.DropDownList("IdCalificacion", (IEnumerable<SelectListItem>)ViewBag["IdCalificacion"], "Selecione genero", new { @class = "form-control" }) *@
-
-                    @*Html.DropDownList("Curso", new SelectList(ViewBag.IdGenero, "ID", "Nombre"))*@
-                    @Html.DropDownList("Inicio", new SelectList(ViewBag.HoraInicio, "ID", "Nombre"))
-
-
+                    @Html.EditorFor(model => model.HoraInicio, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.HoraInicio, "", new { @class = "text-danger" })
+>>>>>>> 24015a67021261dbd545174a4500f470cdd3f8b9
                 </div>
+
+
                 <div class="form-group">
+                    <label for="lunes">Lunes</label>
+                    @Html.CheckBox("lunes", true)
+<<<<<<< HEAD
 
-                    <label for="horaf">Hora fin</label>
-                    <select>
-                        <option value="10:00">10:00</option>
+                    <label for="martes">Martes</label>
+                    @Html.CheckBox("martes", true)
 
-                        <option value="12:00">12:00</option>
-                        <option value="14:00">14:00</option>
+                    <label for="miercoles">Miercoles</label>
+                    @Html.CheckBox("miercoles", true)
 
-                        <option value="16:00">16:00</option>
-                        <option value="19:00">19:00</option>
+                    <label for="jueves">Jueves</label>
+                    @Html.CheckBox("jueves", true)
 
-                    </select>
-                    @*Html.DropDownList("IdCalificacion", (IEnumerable<SelectListItem>)ViewBag["IdCalificacion"], "Selecione genero", new { @class = "form-control" }) *@
+                    <label for="viernes">Viernes</label>
+                    @Html.CheckBox("viernes", true)
 
-                    @*Html.DropDownList("Curso", new SelectList(ViewBag.IdGenero, "ID", "Nombre"))*@
-                    @Html.DropDownList("Inicio", new SelectList(ViewBag.HoraInicio, "ID", "Nombre"))
+=======
 
+                    <label for="martes">Martes</label>
+                    @Html.CheckBox("martes", true)
 
+                    <label for="miercoles">Miercoles</label>
+                    @Html.CheckBox("miercoles", true)
+
+                    <label for="jueves">Jueves</label>
+                    @Html.CheckBox("jueves", true)
+
+                    <label for="viernes">Viernes</label>
+                    @Html.CheckBox("viernes", true)
+
+>>>>>>> 24015a67021261dbd545174a4500f470cdd3f8b9
+                    <label for="sabado">Sabado</label>
+                    @Html.CheckBox("sabado", true)
+
+                    <label for="domingo">Domingo</label>
+                    @Html.CheckBox("domingo", true)
                 </div>
 
+                <div class="form-group">
+                    @Html.LabelFor(model => model.FechaFin, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.FechaFin, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.FechaFin, "", new { @class = "text-danger" })
+                    </div>
+                </div>
 
-
-
-
-
-
-
-
+                <div class="form-group">
+                    @Html.LabelFor(model => model.FechaInicio, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.FechaInicio, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.FechaInicio, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                
                 <!-- INPUT DURACION -->
                 <div class="form-group">
-                    <label for="sala">numero de sala</label>
+                    <label for="sala">Numero de sala</label>
                     @Html.EditorFor(model => model.NumeroSala, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.NumeroSala, "", new { @class = "text-danger" })
                 </div>
 
+                <div class="form-group">
+                    <label for="version">Version</label>
+                    @Html.DropDownList("IdVersion", null, "Selecione version", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.IdVersion, "", new { @class = "text-danger" })
+
+                </div>
                 <!-- BOTON GUARDAR -->
                 <div class="text-center">
                     <input type="submit" class="btn btn-success" value="Guardar" />
@@ -133,32 +171,24 @@
                 </div>
 
             </div>
- }
-     </div>
-       
+        }
     </div>
 
+    
 
-    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
-    <script src="~/Scripts/jquery.validate.min.js"></script>
-    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+        
+        <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+        <script src="~/Scripts/jquery.validate.min.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+        <link href="~/Content/jquery-ui.css" rel="stylesheet" />
+        <script src="~/Scripts/jquery-ui.min.js"></script>
+        <link href="~/Content/jquery.timepicker.css" rel="stylesheet" />
+        <script src="~/Scripts/jquery.timepicker.js"></script>
+        <script src="~/Scripts/Fecha.js"></script>
+        <script src="~/Scripts/Horario.js"></script>
+        
 
 </body>
 </html>
 
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>NuevoCartelera</title>
-</head>
-<body>
-    <div> 
-    </div>
-</body>
-</html>

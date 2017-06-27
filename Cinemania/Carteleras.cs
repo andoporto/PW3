@@ -11,14 +11,20 @@ namespace Cinemania
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Carteleras
     {
         public int IdCartelera { get; set; }
+        [Required]
         public int IdSede { get; set; }
+        [Required]
         public int IdPelicula { get; set; }
+        [Required]
         public int HoraInicio { get; set; }
+        [Required]
         public System.DateTime FechaInicio { get; set; }
+        [Required]
         public System.DateTime FechaFin { get; set; }
         public int NumeroSala { get; set; }
         public int IdVersion { get; set; }
@@ -30,9 +36,11 @@ namespace Cinemania
         public bool Sabado { get; set; }
         public bool Domingo { get; set; }
         public System.DateTime FechaCarga { get; set; }
-    
+        [Required]
         public virtual Peliculas Peliculas { get; set; }
+        [Required]
         public virtual Sedes Sedes { get; set; }
+        [Required]
         public virtual Versiones Versiones { get; set; }
     }
 }

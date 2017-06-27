@@ -28,7 +28,7 @@ namespace Cinemania
         public virtual DbSet<Calificaciones> Calificaciones { get; set; }
         public virtual DbSet<Carteleras> Carteleras { get; set; }
         public virtual DbSet<Generos> Generos { get; set; }
-        public virtual DbSet<Peliculas> Pelicula { get; set; }
+        public virtual DbSet<Peliculas> Peliculas { get; set; }
         public virtual DbSet<Reservas> Reservas { get; set; }
         public virtual DbSet<Sedes> Sedes { get; set; }
         public virtual DbSet<TiposDocumentos> TiposDocumentos { get; set; }

@@ -16,9 +16,9 @@ namespace Cinemania.Models
         public string nombre { get; set; }
         [Required]
         public int descripcion { get; set; }
-        [Required]
+        [Required(AllowEmptyStrings = false)]
         public int calificacion { get; set; }
-        [Required]
+        [Required(AllowEmptyStrings = false)]
         public int genero { get; set; }
         [Required]  [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/mm/yyyy}")]             
         public Nullable<System.DateTime> FechaCarga { get; set; }
