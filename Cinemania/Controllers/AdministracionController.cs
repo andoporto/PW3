@@ -45,19 +45,27 @@ namespace Cinemania.Controllers
         public ActionResult NuevoPelicula()
         {
              ViewBag.IdCalificacion = new SelectList(db.Calificaciones, "IdCalificacion", "Nombre");
+<<<<<<< HEAD
              ViewBag.IdGenero = new SelectList(db.Generos, "IdGenero", "Nombre");
 
                         
             
             
             // return View(lPeli); 
+=======
+             ViewBag.IdGenero = new SelectList(db.Generos, "IdGenero", "Nombre");            
+>>>>>>> 24015a67021261dbd545174a4500f470cdd3f8b9
             
             ViewBag.listaPeliculas = new SelectList(db.Peliculas, "IdPelicula", "Nombre"); 
 
             return View();
 
         } 
+<<<<<<< HEAD
        
+=======
+ 
+>>>>>>> 24015a67021261dbd545174a4500f470cdd3f8b9
         
         [HttpPost]
         public ActionResult NuevoPelicula(Peliculas Pelicula)
@@ -71,7 +79,6 @@ namespace Cinemania.Controllers
             pel.Duracion = Pelicula.Duracion;
             pel.FechaCarga = DateTime.Now;
            
-
 
             if (ModelState.IsValid)
             {
@@ -146,11 +153,19 @@ namespace Cinemania.Controllers
             if (ModelState.IsValid)
             {
 
+<<<<<<< HEAD
 
 
             db.Sedes.Add(sed);
             db.SaveChanges();
 
+=======
+
+
+                db.Sedes.Add(sed);
+                db.SaveChanges();
+
+>>>>>>> 24015a67021261dbd545174a4500f470cdd3f8b9
                 return RedirectToAction("Sedes"); // Retorna a la vista "Sedes"
             }
             return View();
@@ -183,11 +198,14 @@ namespace Cinemania.Controllers
 
 
 
-
-        // GET: Administracion/Carteleras
         public ActionResult Carteleras()
         {
+<<<<<<< HEAD
             var listaCarteleras = db.Carteleras.ToList();          
+=======
+            var listaCarteleras = db.Carteleras.ToList();
+           // ViewBag.listaCalificaciones = new SelectList(db.Calificaciones, "IdCalificaciones", "Nombre");
+>>>>>>> 24015a67021261dbd545174a4500f470cdd3f8b9
 
             return View(listaCarteleras);
         }
@@ -198,6 +216,7 @@ namespace Cinemania.Controllers
             ViewBag.IdSede = new SelectList(db.Sedes, "IdSede", "Nombre");
             ViewBag.IdPelicula = new SelectList(db.Peliculas, "IdPelicula", "Nombre");
             ViewBag.IdVersion = new SelectList(db.Versiones, "IdVersion", "Nombre");
+<<<<<<< HEAD
             return View();
         }
          [HttpPost]
@@ -226,10 +245,42 @@ namespace Cinemania.Controllers
 
                 return RedirectToAction("Carteleras"); // Retorna a la vista "Peliculas"
             }
+=======
+>>>>>>> 24015a67021261dbd545174a4500f470cdd3f8b9
             return View();
         }
+         [HttpPost]
+        public ActionResult NuevoCartelera(Carteleras Cartelera)
+        {
+            Carteleras car = new Carteleras();
+            car.IdSede = Cartelera.IdSede;
+            car.IdPelicula = Cartelera.IdPelicula;
+            car.HoraInicio = Cartelera.HoraInicio;
+            car.Lunes = Cartelera.Lunes;
+            car.Martes = Cartelera.Martes;
+            car.Miercoles = Cartelera.Miercoles;
+            car.Jueves = Cartelera.Jueves;
+            car.Viernes = Cartelera.Viernes;
+            car.Sabado = Cartelera.Sabado;
+            car.Domingo = Cartelera.Domingo;
+            car.FechaInicio = Cartelera.FechaInicio;
+            car.FechaFin = Cartelera.FechaFin;
+            car.NumeroSala = Cartelera.NumeroSala;
+            car.IdVersion = Cartelera.IdVersion;
 
+            if (ModelState.IsValid)
+            {
+                db.Carteleras.Add(car);
+                db.SaveChanges();
+
+<<<<<<< HEAD
         // GET: Administracion/Reportes      
+=======
+                return RedirectToAction("Carteleras"); // Retorna a la vista "Peliculas"
+            }
+            return View();
+        }
+>>>>>>> 24015a67021261dbd545174a4500f470cdd3f8b9
 
         public ActionResult Reportes()
         {

@@ -11,7 +11,8 @@ namespace Cinemania
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Peliculas
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,19 +21,27 @@ namespace Cinemania
             this.Carteleras = new HashSet<Carteleras>();
             this.Reservas = new HashSet<Reservas>();
         }
-    
+        [Required]
         public int IdPelicula { get; set; }
+        [Required]
         public string Nombre { get; set; }
+        [Required]
         public string Descripcion { get; set; }
+        [Required]
         public string Imagen { get; set; }
+        [Required]
         public int IdCalificacion { get; set; }
+        [Required]
         public int IdGenero { get; set; }
+        [Required]
         public int Duracion { get; set; }
         public System.DateTime FechaCarga { get; set; }
-    
+        [Required(AllowEmptyStrings = false)]
         public virtual Calificaciones Calificaciones { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [Required(AllowEmptyStrings = false)]
         public virtual ICollection<Carteleras> Carteleras { get; set; }
+        [Required(AllowEmptyStrings = false)]
         public virtual Generos Generos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Reservas> Reservas { get; set; }

@@ -66,6 +66,7 @@
                 </div>
 
                 <!-- INPUT CALIFICACION -->
+<<<<<<< HEAD
 
                 <div class="form-group">
                     @Html.LabelFor(model => model.HoraInicio, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -73,12 +74,30 @@
                         @Html.TextBoxFor(model => model.HoraInicio, new { @class = "form-control horario time ui-timepicker-input" })
                         @Html.ValidationMessageFor(model => model.HoraInicio, "", new { @class = "text-danger" })
                     </div>
+=======
+                <div class="form-group">
+
+                    <label for="horai">Hora inicio</label>
+                    <select>
+                        <option value="10:00">10:00</option>
+
+                        <option value="12:00">12:00</option>
+                        <option value="14:00">14:00</option>
+
+                        <option value="16:00">16:00</option>
+                        <option value="19:00">19:00</option>
+
+                    </select>
+                    @Html.EditorFor(model => model.HoraInicio, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.HoraInicio, "", new { @class = "text-danger" })
+>>>>>>> 24015a67021261dbd545174a4500f470cdd3f8b9
                 </div>
 
 
                 <div class="form-group">
                     <label for="lunes">Lunes</label>
                     @Html.CheckBox("lunes", true)
+<<<<<<< HEAD
 
                     <label for="martes">Martes</label>
                     @Html.CheckBox("martes", true)
@@ -92,6 +111,21 @@
                     <label for="viernes">Viernes</label>
                     @Html.CheckBox("viernes", true)
 
+=======
+
+                    <label for="martes">Martes</label>
+                    @Html.CheckBox("martes", true)
+
+                    <label for="miercoles">Miercoles</label>
+                    @Html.CheckBox("miercoles", true)
+
+                    <label for="jueves">Jueves</label>
+                    @Html.CheckBox("jueves", true)
+
+                    <label for="viernes">Viernes</label>
+                    @Html.CheckBox("viernes", true)
+
+>>>>>>> 24015a67021261dbd545174a4500f470cdd3f8b9
                     <label for="sabado">Sabado</label>
                     @Html.CheckBox("sabado", true)
 
